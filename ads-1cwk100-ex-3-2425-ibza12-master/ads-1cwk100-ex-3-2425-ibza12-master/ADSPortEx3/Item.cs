@@ -21,7 +21,7 @@ namespace ADSPortEx3
 
         public string Name
         {
-            get { throw new NotImplementedException(); }
+            get { throw new NotImplementedException(); } please work
             set { throw new NotImplementedException(); }
         }
 
