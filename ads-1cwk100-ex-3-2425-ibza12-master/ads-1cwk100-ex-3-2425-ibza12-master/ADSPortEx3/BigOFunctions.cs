@@ -97,29 +97,35 @@ namespace ADSPortEx3
     // = (x * y)
     // Big O = O(x * y)
 }
-
+        // FC
         public void QuestionTwo()
         {
-            Console.WriteLine("How many items to analyse?: ");
+            Console.WriteLine("How many items to analyse?: "); // 1
 
-            int n = Int32.Parse(Console.ReadLine());
+            int n = Int32.Parse(Console.ReadLine());  // 1
 
-            Item[] items = new Item[n];
+            Item[] items = new Item[n];  // 1
 
             //TODO LoadItemManifesto(), yeah well I hardly see you pulling your finger out of your **** Dave - Steve
 
-            for (int i = 0; i < (n - 1); i++)
+            for (int i = 0; i < (n - 1); i++)    // (n - 1) + 1
             {
-                Item current = items[i];
-                Console.WriteLine("Displaying value of: " + current.Name);
-                Console.Write(current.Value);
+                Item current = items[i];       // (n - 1) 
+                Console.WriteLine("Displaying value of: " + current.Name);    // (n - 1) 
+                Console.Write(current.Value);   // (n - 1)
 
             }
 
-            Console.WriteLine("Items analysed");
+            Console.WriteLine("Items analysed");    // 1
 
-            Console.ReadLine();
+            Console.ReadLine(); // 1
         }
 
     }
+     // Working out
+    // Total F.Cs:
+    // 1 + 1 + 1 + ((n - 1) + 1) + (n - 1) + (n - 1) + (n - 1) + 1 + 1
+    // = 7 + 3(n - 1)
+    // = 7 + 3n - 3
+    // = O(n)
 }
