@@ -47,46 +47,56 @@ namespace ADSPortEx3
         }
 
         public void QuestionOne()
+{
+    //FC
+    Console.WriteLine("Inventory initialisation");   // 1   
+
+    Console.WriteLine("Define X dimension size: ");    // 1
+
+    int x = Int32.Parse(Console.ReadLine());             // 1
+
+    Console.WriteLine("Define Y dimension size: ");  //1
+
+    int y = Int32.Parse(Console.ReadLine());          //1
+
+
+    Item[,] inventory = new Item[x, y];           // 1   
+
+    Console.WriteLine("Now loading inventory");    //1
+
+    for (int i = 0; i < x; i++)                    // x + 1
+    {
+
+        Console.WriteLine("Starting on row " + (i + 1)); // x
+
+        for (int j = 0; j < y; j++)     // (x * y) + x
         {
-            Console.WriteLine("Inventory initialisation");
+            Console.WriteLine("Current Coords. " + i + " , " + j);  // x * y
 
-            Console.WriteLine("Define X dimension size: ");
+            //TODO, load item from LoadItem() function here, finish this already Steve you **** - Dave
 
-            int x = Int32.Parse(Console.ReadLine());
+            Item test = new Item((i + " , " + j), 1, 1);  // x * y
 
-            Console.WriteLine("Define Y dimension size: ");
+            inventory[i, j] = test;                      // x * y
+            Console.WriteLine("Added " + test.Name + " at Coords."); // x * y
 
-            int y = Int32.Parse(Console.ReadLine());
-
-
-            Item[,] inventory = new Item[x, y];
-
-            Console.WriteLine("Now loading inventory");
-
-            for (int i = 0; i < x; i++)
-            {
-
-                Console.WriteLine("Starting on row " + (i + 1));
-
-                for (int j = 0; j < y; j++)
-                {
-                    Console.WriteLine("Current Coords. " + i + " , " + j);
-
-                    //TODO, load item from LoadItem() function here, finish this already Steve you **** - Dave
-
-                    Item test = new Item((i + " , " + j), 1, 1);
-
-                    inventory[i, j] = test;
-                    Console.WriteLine("Added " + test.Name + " at Coords.");
-
-                }
-            }
-
-            Console.WriteLine("Inventory finished loading.");
-            Console.WriteLine("Happy travels!");
-
-            Console.ReadLine();
         }
+    }
+
+    Console.WriteLine("Inventory finished loading.");  // 1
+    Console.WriteLine("Happy travels!");  //1
+
+    Console.ReadLine();     // 1
+
+    // working out
+    // Total FC:
+    //  1 + 1 + 1 + 1 + 1 + (x + 1) + x + (x * y + x) + (x * y) + (x * y) + (x * y) + 1 + 1
+    // = 7 + (x + 1) + x + (x * y + x) + 3(x * y)
+    // = 7 + 2x + 4(x * y)
+    // = 2x + (x * y)
+    // = (x * y)
+    // Big O = O(x * y)
+}
 
         public void QuestionTwo()
         {
